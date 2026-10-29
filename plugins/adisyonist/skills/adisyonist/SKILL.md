@@ -19,7 +19,10 @@ The `adisyonist` server is the user's own restaurant POS data, **read-only**. It
 - Amounts are in `para_birimi` and are the **net collected amount** (after discounts).
   `indirim_toplam` is the discount given; gross = `ciro + indirim_toplam`.
 - Multi-branch businesses: call `subeler` first, then pass `sube_id`. Without it, tools cover all branches.
-- `satis_ozeti` accepts at most 92 days per call. For longer periods call it per month and add up.
+- Period tools accept at most 92 days per call. For longer periods call per month and add up.
+- Analytics follow the app's own report rules: a check counts for the staff member who opened the table
+  (else who closed it), categories come from the menu, legacy checks without a branch belong to the default branch.
+  `kategori_satis` revenue is per item before bill discounts, so it can differ slightly from `ciro`.
 - If a tool returns an error, explain it plainly; do not invent numbers.
 - Data is read-only: you cannot open/close tables, change prices or edit reservations. Say so if asked.
 
@@ -32,6 +35,11 @@ The `adisyonist` server is the user's own restaurant POS data, **read-only**. It
 | Bir günün vardiyaları | `vardiyalar(tarih?, sube_id?)` |
 | Minimum seviyenin altındaki stoklar | `kritik_stoklar(sube_id?)` |
 | Şubeler ve kimlikleri | `subeler()` |
+| En yoğun saatler, haftanın günleri, yoğunluk haritası | `saatlik_satis(baslangic?, bitis?, sube_id?)` — default last 7 days |
+| Kategori bazında ciro ve en çok satanlar | `kategori_satis(baslangic?, bitis?, sube_id?)` |
+| Personel başına adisyon, ciro, ortalama | `personel_performansi(baslangic?, bitis?, sube_id?)` |
+| Şubeler yan yana | `sube_karsilastirma(baslangic?, bitis?)` |
+| Gün/hafta/ay serisi, önceki dönemle % değişim | `satis_trendi(baslangic?, bitis?, sube_id?, gruplama?, onceki_donemle_karsilastir?)` — default last 7 days |
 
 ## Playbooks
 
@@ -51,9 +59,16 @@ and a suggested order of `minimum × 2 − current` (rounded up, in the item's u
 suggestion is a rule of thumb, not a forecast.
 
 ### Haftalık karşılaştırma (week over week)
-Compute this week (Monday → today) and the same days of last week. Call `satis_ozeti` for both ranges.
-Show revenue, checks and average check side by side with % change, then the top items of each week
-and what moved up or down. Point out if this week is still in progress.
+Compute this week (Monday → today). Call `satis_trendi(baslangic=Monday, bitis=today)`: it returns the daily
+series and compares with the immediately preceding period of the same length (the same weekdays of last week).
+Show revenue, checks and average check side by side with the % change from `karsilastirma.degisim_yuzde`.
+Call `satis_ozeti` for both ranges if top items are needed, and say what moved up or down.
+Point out if this week is still in progress.
+
+### Yoğunluk ve personel planı (staffing)
+Call `saatlik_satis` for the last 4 weeks and `personel_performansi` for the same period. Name the busiest
+weekday/time slots from `isi_haritasi` and `haftanin_gunleri.ortalama_gunluk_ciro`, and compare with `vardiyalar`
+for the coming days. Keep it to suggestions; you cannot change shifts.
 
 ## Style
 - Lead with the number the user asked for, then the context.

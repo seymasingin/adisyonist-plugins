@@ -1,7 +1,7 @@
 {
   "name": "adisyonist",
-  "version": "0.1.0",
-  "description": "Adisyonist restoran yönetim verileri: satış özeti, açık masalar, rezervasyonlar, vardiyalar ve kritik stoklar (salt okunur). Günlük rapor, stok kontrolü ve haftalık karşılaştırma komutlarıyla.",
+  "version": "0.2.0",
+  "description": "Adisyonist restoran yönetim verileri: satış özeti, açık masalar, rezervasyonlar, vardiyalar, kritik stoklar, saatlik yoğunluk, kategori, personel ve şube analizleri, satış trendi (salt okunur). Günlük rapor, stok kontrolü ve haftalık karşılaştırma komutlarıyla.",
   "author": {
     "name": "Adisyonist",
     "email": "info@adisyonist.com",

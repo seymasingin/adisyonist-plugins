@@ -46,6 +46,13 @@ Ayarlar → Bağlayıcılar → Özel bağlayıcı ekle → `https://mcp.adisyon
 - Her bağlantı yalnızca giriş yapan işletmenin verisini görür.
 - Bağlantıyı istediğiniz zaman Claude ayarlarından kaldırabilirsiniz.
 
+## Belgeler
+
+- [Kullanım kılavuzu](https://en.adisyonist.com/user-guide/)
+- [Gizlilik politikası](https://en.adisyonist.com/privacy-policy/)
+- [Kullanım koşulları](https://en.adisyonist.com/terms-of-use/)
+- [İade politikası](https://en.adisyonist.com/refund-policy/)
+
 ## Destek
 
 info@adisyonist.com · https://adisyonist.com

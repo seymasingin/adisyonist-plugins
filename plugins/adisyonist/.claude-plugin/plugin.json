@@ -1,0 +1,21 @@
+{
+  "name": "adisyonist",
+  "version": "0.1.0",
+  "description": "Adisyonist restoran yönetim verileri: satış özeti, açık masalar, rezervasyonlar, vardiyalar ve kritik stoklar (salt okunur). Günlük rapor, stok kontrolü ve haftalık karşılaştırma komutlarıyla.",
+  "author": {
+    "name": "Adisyonist",
+    "email": "info@adisyonist.com",
+    "url": "https://adisyonist.com"
+  },
+  "homepage": "https://adisyonist.com",
+  "repository": "https://github.com/seymasingin/adisyonist-plugins",
+  "keywords": [
+    "adisyonist",
+    "restaurant",
+    "restoran",
+    "pos",
+    "adisyon",
+    "mcp"
+  ],
+  "mcpServers": "./.mcp.json"
+}

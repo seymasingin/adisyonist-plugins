@@ -1,0 +1,18 @@
+{
+  "name": "adisyonist",
+  "owner": {
+    "name": "Adisyonist",
+    "email": "info@adisyonist.com",
+    "url": "https://adisyonist.com"
+  },
+  "metadata": {
+    "description": "Adisyonist restoran yönetim sistemi eklentileri."
+  },
+  "plugins": [
+    {
+      "name": "adisyonist",
+      "description": "Adisyonist restoran verileri (salt okunur) ve günlük rapor, stok kontrolü, haftalık karşılaştırma komutları.",
+      "source": "./plugins/adisyonist"
+    }
+  ]
+}

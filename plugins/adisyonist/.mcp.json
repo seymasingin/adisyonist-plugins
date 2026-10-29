@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "adisyonist": {
+      "type": "http",
+      "url": "https://mcp.adisyonist.com/mcp"
+    }
+  }
+}

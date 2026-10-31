@@ -1,7 +1,7 @@
-# Adisyonist — Claude eklentisi
+# Adisyonist — Claude ve Antigravity eklentisi
 
-[Adisyonist](https://adisyonist.com) restoran yönetim sisteminin resmi Claude eklentisi.
-Restoranınızın satış, masa, rezervasyon, vardiya ve stok verilerini Claude'a **salt okunur** olarak bağlar.
+[Adisyonist](https://adisyonist.com) restoran yönetim sisteminin resmi Claude ve Google Antigravity eklentisi.
+Restoranınızın satış, masa, rezervasyon, vardiya ve stok verilerini yapay zekâ asistanınıza **salt okunur** olarak bağlar.
 
 ## Neler yapabilirsiniz
 
@@ -39,12 +39,28 @@ Ardından Claude Code içinde `/mcp` komutuyla Adisyonist hesabınıza giriş ya
 
 Ayarlar → Bağlayıcılar → Özel bağlayıcı ekle → `https://mcp.adisyonist.com/mcp`
 
+**Google Antigravity**
+
+```bash
+agy plugin install https://github.com/seymasingin/adisyonist-plugins
+```
+
+İlk araç çağrısında Antigravity Adisyonist giriş ekranını açar; işletme sahibi hesabınızla giriş yapın.
+
 ## Güvenlik ve gizlilik
 
 - Erişim yalnızca **okuma** amaçlıdır; Claude masa açamaz, fiyat değiştiremez, kayıt silemez.
 - Giriş Adisyonist'in kendi onay ekranından yapılır; şifreniz Claude ile paylaşılmaz.
 - Her bağlantı yalnızca giriş yapan işletmenin verisini görür.
-- Bağlantıyı istediğiniz zaman Claude ayarlarından kaldırabilirsiniz.
+- Bağlantıyı istediğiniz zaman Claude ayarlarından veya `agy plugin uninstall adisyonist` ile kaldırabilirsiniz.
+
+## Depo yapısı
+
+- `.claude-plugin/marketplace.json`, `plugins/adisyonist/` – Claude eklentisi
+- `plugin.json`, `mcp_config.json`, `rules/`, `skills/`, `assets/` – Antigravity eklentisi
+
+`skills/adisyonist/SKILL.md` ile `plugins/adisyonist/skills/adisyonist/SKILL.md` aynı dosyadır; birini
+değiştirince diğerini de güncelleyin.
 
 ## Belgeler
 

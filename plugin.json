@@ -1,0 +1,18 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "adisyonist",
+  "displayName": "Adisyonist",
+  "version": "0.2.0",
+  "description": "Adisyonist restoran verilerine salt okunur erişim: satış, açık masa, rezervasyon, vardiya, stok ve şube analizleri; günlük rapor ve haftalık karşılaştırma.",
+  "author": { "name": "Adisyonist", "email": "info@adisyonist.com", "url": "https://adisyonist.com" },
+  "homepage": "https://adisyonist.com",
+  "repository": "https://github.com/seymasingin/adisyonist-plugins",
+  "license": "MIT",
+  "keywords": ["adisyonist", "restaurant", "restoran", "pos", "mcp"],
+  "logo": "assets/logo.png",
+  "suggestedPrompts": [
+    "Bugünkü günlük raporumu çıkar.",
+    "Kritik seviyedeki stokları listele ve sipariş önerisi ver.",
+    "Bu haftayı geçen haftayla karşılaştır."
+  ]
+}
